@@ -15,7 +15,7 @@ Show selected row data below the table.-->
     }
 </style>
 <body>
-    <table id="table">
+    <table id="table" style="cursor: pointer;">
         <thead id="head">
             <tr>
                 <th>District</th>
@@ -47,7 +47,7 @@ Show selected row data below the table.-->
 
     <script>
         let rows=document.querySelectorAll("#table tr");
-        let name=document.getElementById("#name");
+        let name=document.getElementById("name");
         rows.forEach((row,index)=>{
             if(index==0){
                 return;
@@ -59,7 +59,7 @@ Show selected row data below the table.-->
             })
             row.classList.add("selected");
 
-            let dist=row.children[1].innerText;
+            let dist=row.children[0].innerText;
 
             name.innerText="Selected District:"+dist;
         })

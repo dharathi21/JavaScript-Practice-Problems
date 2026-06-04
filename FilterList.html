@@ -21,7 +21,7 @@ Hide non-matching items.-->
 
     <script>
              let search=document.getElementById("search");
-             let items=document.querySelectorAll("list");
+             let items=document.querySelectorAll("#list li");
              search.addEventListener('input',(event)=>{
                 let searchText=search.value.toLowerCase();
                 items.forEach(item=>{

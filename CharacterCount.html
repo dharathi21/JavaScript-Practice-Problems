@@ -1,0 +1,28 @@
+<!--Create a textarea.
+Requirements:
+Show the number of characters typed.
+Update count instantly while typing.
+If characters exceed 100, display a warning message.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Character count</title>
+    </head>
+    <body>
+        <textarea id="character"></textarea>
+        <p id="count">Character:</p>
+        <script>
+            let char=document.getElementById("character");
+            let count=0;
+            let add=document.getElementById("count");
+            char.addEventListener('keyup',(event)=>{
+                count=count+1;
+                if(count>100){
+                    alert("It exceeds 100 character");
+                }
+                add.innerText="Character :"+count;
+            })
+        </script>
+    </body>
+    
+</html>

@@ -6,5 +6,65 @@ Show selected row data below the table.-->
 
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Highlight Row</title>
+</head>
+<style>
+    .selected{
+        background-color: cornflowerblue;
+    }
+</style>
+<body>
+    <table id="table">
+        <thead id="head">
+            <tr>
+                <th>District</th>
+                <th>State</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>Chennai</td>
+            <td>Tamil Nade</td>
+        </tr>
+         <tr>
+            <td>Coimbatore</td>
+            <td>Tamil Nade</td>
+        </tr>
+         <tr>
+            <td>Trichy</td>
+            <td>Tamil Nade</td>
+        </tr>
+         <tr>
+            <td>Salem</td>
+            <td>Tamil Nade</td>
+        </tr>
+         <tr>
+            <td>Erode</td>
+            <td>Tamil Nade</td>
+        </tr>
+    </table>
+    <p id="name">Selected District : </p>
 
+    <script>
+        let rows=document.querySelectorAll("#table tr");
+        let name=document.getElementById("#name");
+        rows.forEach((row,index)=>{
+            if(index==0){
+                return;
+            }
+            row.addEventListener('click',(event)=>{
+               rows.forEach(r=>{
+                r.classList.remove("selected");
+              
+            })
+            row.classList.add("selected");
+
+            let dist=row.children[1].innerText;
+
+            name.innerText="Selected District:"+dist;
+        })
+         })
+
+    </script>
+</body>
 </html>

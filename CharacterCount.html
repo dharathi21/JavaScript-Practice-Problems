@@ -10,17 +10,19 @@ If characters exceed 100, display a warning message.-->
     </head>
     <body>
         <textarea id="character"></textarea>
-        <p id="count">Character:</p>
+        <p id="count">Character:0</p>
         <script>
             let char=document.getElementById("character");
             let count=0;
             let add=document.getElementById("count");
-            char.addEventListener('keyup',(event)=>{
-                count=count+1;
-                if(count>100){
-                    alert("It exceeds 100 character");
+            char.addEventListener('input',(event)=>{
+                count=char.value.length;
+                if(count<=100){
+                    add.innerText="Characters :"+count;
+                }else{
+                    add.innerText="Characters :"+count+" (Limit Exceeded)";
                 }
-                add.innerText="Character :"+count;
+               
             })
         </script>
     </body>

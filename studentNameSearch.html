@@ -39,7 +39,20 @@
         <li>Harini</li>
     </ul>
     <script>
-        
+        let search=document.getElementById("search");
+        let lists=document.querySelectorAll("#list li");
+        search.addEventListener('input',(event)=>{
+             let searchValue=search.value.toLowerCase();
+            lists.forEach(list=>{
+               
+                let studentName=list.innerText.toLowerCase();
+                if(studentName.includes(searchValue)){
+                    list.style.display="block";
+                }else{
+                    list.style.display="none";
+                }
+            })
+        })
     </script>
 </body>
 </html>

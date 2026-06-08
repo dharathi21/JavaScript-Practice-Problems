@@ -30,7 +30,7 @@
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
         }
-        #favo{
+        .favo{
             padding: 10px;
             heihht:20px;
         width:200px;
@@ -38,6 +38,10 @@
        border-radius: 20px;
        border: 1px solid rgb(44, 11, 11);
     font-family: 'Courier New', Courier, monospace;  }
+    .updated{
+        background-color:rgb(255, 189, 200);
+       
+    }
         
     </style>
     <body>
@@ -46,33 +50,50 @@
         <div id="card">
         <img src="https://i.pinimg.com/736x/70/97/65/709765d330bb3991962c6ea909decb81.jpg" width="300px">
         <h3 id="title">Dear Comrad</h3>
-        <button id="favo">Favorite</button>
+        <button class="favo">Favorite</button>
         </div>
          <div id="card">
         <img src="https://i.pinimg.com/736x/24/33/77/243377ff59eab17e128226318a978bdb.jpg" width="300px">
         <h3 id="title">KanduKonden</h3>
-        <button id="favo">Favorite</button>
+        <button class="favo">Favorite</button>
         </div>
          <div id="card">
         <img src="https://i.pinimg.com/736x/be/be/d6/bebed682256529e72b52beb78255e4e7.jpg" width="300px">
         <h3 id="title">Neram</h3>
-        <button id="favo">Favorite</button>
+        <button class="favo">Favorite</button>
         </div>
          <div id="card">
         <img src="https://i.pinimg.com/736x/eb/b9/ee/ebb9ee5e0ef20f50e3059a10f25bd6eb.jpg" width="300px">
         <h3 id="title">96</h3>
-        <button id="favo">Favorite</button>
+        <button class="favo">Favorite</button>
         </div>
          <div id="card">
         <img src="https://i.pinimg.com/1200x/e7/e4/63/e7e46370a1f35db9a9a2b556cbe38651.jpg" width="300px">
         <h3 id="title">ThalaPathi</h3>
-        <button id="favo">Favorite</button>
+        <button class="favo">Favorite</button>
         </div>
          <div id="card">
         <img src="https://i.pinimg.com/736x/c9/28/53/c928538c7c0dd2e1cfb3c1d65f236e14.jpg" width="300px">
         <h3 id="title">Bombay</h3>
-        <button id="favo">Favorite</button>
+        <button class="favo">Favorite</button>
         </div>
     </div>
+    <script>
+        let lists=document.querySelectorAll(".favo");
+       lists.forEach(list=>{
+        list.addEventListener('click',(event)=>{
+          list.parentElement.classList.toggle("updated");
+          if(list.parentElement.classList.contains("updated")){
+            list.innerText="♡ Favorited";
+            list.style.backgroundColor="rgb(255, 118, 118)";
+            list.style.color="white";
+          }else{
+            list.innerText="Favorite";
+            list.style.backgroundColor="white";
+            list.style.color="black";
+          }
+        })
+       })
+    </script>
     </body>
 </html>

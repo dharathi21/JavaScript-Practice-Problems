@@ -34,6 +34,11 @@
             margin-top: 20px;
             padding: 20px;
         }
+        li{
+            list-style: none;
+            font-family: 'Courier New', Courier, monospace;
+           
+        }
     </style>
     <body>
         <input type="text" id="task" placeholder="Enter your task">
@@ -47,6 +52,17 @@
         <script>
             let task=document.getElementById("task");
             let btn=document.getElementById("add");
+            let container=document.getElementById("container");
+            btn.addEventListener('click',(event)=>{
+                let li=document.createElement("li");
+                li.innerText=task.value;
+                let button=document.createElement("button");
+                 container.appendChild(li);
+                task.value="";
+            }
+
+
+            )
         </script>
     </body>
 </html>

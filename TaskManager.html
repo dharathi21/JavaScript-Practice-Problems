@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Manager</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+        #task{
+            width: 300px;
+            height:30px;
+            padding:5px;
+            background-color: rgb(184, 236, 223);
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #add{
+            width: 300px;
+            padding: 5px;
+            height: 30px;
+            border-radius: 10px;
+            background-color: rgb(184, 127, 254);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        p{
+           font-family: 'Courier New', Courier, monospace;
+        }
+        #tasks{
+            background-color: rgb(101, 160, 220);
+            margin-top: 20px;
+            padding: 20px;
+        }
+        #comp{
+            background-color: rgb(101, 160, 220);
+            margin-top: 20px;
+            padding: 20px;
+        }
+    </style>
+    <body>
+        <input type="text" id="task" placeholder="Enter your task">
+        <button id="add">Add</button>
+        <div id="tasks">
+        <p>Tasks:</p>
+        <ul id="container"></ul></div>
+        <div id="comp">
+        <p>Completed:</p>
+        <ul id="completed"></ul></div>
+        <script>
+            let task=document.getElementById("task");
+            let btn=document.getElementById("add");
+        </script>
+    </body>
+</html>

@@ -5,14 +5,23 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <style>
-        p{
-           
+        *{
+            font-family: 'Courier New', Courier, monospace;
         }
+       select{
+        width:150px;
+        height:30px;
+        padding: 5px;
+        background-color: aliceblue;
+       }
+       option{
+        background-color: rgb(207, 238, 255);
+       }
     </style>
     <body>
         <h1>THEME CHANGER</h1>
         <h3>Choose Theme</h3>
-        <select>
+        <select id="theme">
             <option>White</option>
              <option>ghostwhite</option>
               <option>Pink</option>
@@ -20,5 +29,11 @@
                 <option>skyblue</option>
                  <option>thistle</option>
         </select>
+        <script>
+            let theme=document.getElementById("theme");
+            theme.addEventListener('change',(event)=>{
+                document.body.style.backgroundColor=theme.value;
+            })
+        </script>
     </body>
 </html>

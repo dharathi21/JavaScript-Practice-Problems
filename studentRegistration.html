@@ -41,6 +41,16 @@
          <label>Department:</label><br>
         <input id="dept" type="text" placeholder="Enter department">
        <br> <button id="button">Register</button></form>
-        <p id="container"></p>
+        <p id="container">Register</p>
+
+        <script>
+            let btn=document.getElementById("button");
+            let name=document.getElementById("name");
+            let container=document.getElementById("container");
+            btn.addEventListener('click',(event)=>{
+                event.preventDefault();
+                container.innerText=name.value+" registerd successfully!!";
+            })
+        </script>
     </body>
 </html>

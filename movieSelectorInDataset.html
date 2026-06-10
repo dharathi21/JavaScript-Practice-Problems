@@ -50,20 +50,27 @@
         <div id="card">
         <img src="https://i.pinimg.com/736x/70/97/65/709765d330bb3991962c6ea909decb81.jpg" width="300px">
         <h3 id="title">Dear Comrad</h3>
-        <button class="favo">Favorite</button>
+        <button data-movie="DEARCOMRAD" class="favo">Favorite</button>
         </div>
          <div id="card">
         <img src="https://i.pinimg.com/1200x/e7/e4/63/e7e46370a1f35db9a9a2b556cbe38651.jpg" width="300px">
         <h3 id="title">ThalaPathi</h3>
-        <button class="favo">Favorite</button>
+        <button data-movie="THALAPATHI"  class="favo">Favorite</button>
         </div>
          <div id="card">
         <img src="https://i.pinimg.com/736x/c9/28/53/c928538c7c0dd2e1cfb3c1d65f236e14.jpg" width="300px">
         <h3 id="title">Bombay</h3>
-        <button class="favo">Favorite</button>
+        <button data-movie="BOMBAY"  class="favo">Favorite</button>
         </div>
+        <h1 id="favo">Favorite:</h1>
     </div>
     <script>
-        
+        let buttons=document.querySelectorAll("button");
+        let favo=document.getElementById("favo");
+        buttons.forEach(button=>{
+            button.addEventListener('click',(event)=>{
+                      favo.innerText="Selected :"+event.target.dataset.movie; 
+            })
+        })
     </script>
     </body></html>

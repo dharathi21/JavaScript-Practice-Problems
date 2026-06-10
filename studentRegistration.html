@@ -4,5 +4,43 @@
         <title>
             Student Registration Form
         </title>
+        <link rel="stylesheet" href="style.css">
     </head>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        form{
+            padding: 20px;
+            margin: 20px;
+        }
+        label,input{
+          
+            padding: 5px;
+            margin: 10px;
+        }
+        button{
+            margin-top: 5px;
+            height:30px;
+            position: fixed;
+            left:330px;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+            border: 1px solid black;
+            font-size: 16px;
+        }
+      
+    </style>
+    <body>
+        <h1>Student Registration Form</h1>
+        <form>
+        <label>Student Name:</label>
+        <br>
+        <input id="name" type="text" placeholder="Enter name"><br>
+         <label>Department:</label><br>
+        <input id="dept" type="text" placeholder="Enter department">
+       <br> <button id="button">Register</button></form>
+        <p id="container"></p>
+    </body>
 </html>

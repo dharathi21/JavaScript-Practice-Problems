@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Shopping List</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+        li{
+            list-style: none;
+            padding: 10px;
+            margin:3px;
+        }
+    input{
+        padding:5px;
+        margin: 10px;
+    }
+    button{
+        padding: 5px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    </style>
+    <body>
+        <H1>Shopping List</H1>
+        <input id="item" type="text" placeholder="Enter the items">
+        <button id="btn">Add Item</button>
+        <ul id="container"></ul>
+        <script>
+            let item=document.getElementById("item");
+            let btn=document.getElementById("btn");
+            let container=document.getElementById("container");
+            btn.addEventListener('click',(event)=>{
+                let li=document.createElement("li");
+                li.innerHTML=item.value+"<button>Delete</button";
+                container.appendChild(li);
+                item.value="";
+            })
+            container.addEventListener('click',(event)=>{
+                if(event.target.matches("button")){
+                    event.target.parentElement.remove();
+                }
+            })
+        </script>
+    </body>
+</html>

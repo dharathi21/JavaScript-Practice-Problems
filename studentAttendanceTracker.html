@@ -4,15 +4,62 @@
     <head>
     <title>Student Admission</title>
     <link rel="stylesheet" href="style.css">
+<style>
+    button{
+        width:200px;
+        padding: 2px;
+    }
+    input{
+        padding:4px;
+    }
+</style></head><body>
+    <h1>Admission Form</h1>
     <form>
         <label>Name:</label>
-        <input type="text" placeholder="Enter name" required>
+        <input id="name" type="text" placeholder="Enter name" required>
         <label>Department:</label>
-        <input type="text" placeholder="Enter dept" required>
-        <button id="btn">Add</button>
+        <input id="dept" type="text" placeholder="Enter dept" required><br><br>
+         <center><button id="btn">Add</button></center>
     </form>
-</head>
-<body>
+    <ul id="container"></ul>
+<script>
+    let name=document.getElementById("name");
+    let dept=document.getElementById("dept");
+    let btn=document.getElementById("btn");
+    let container=document.getElementById("container");
+
+    let students=JSON.parse(localStorage.getItem("students")) || [];
+
+    displayStudents();
+
+    btn.addEventListener('click',(event)=>{
+        let student={
+            name:name.value,
+            dept:dept.value
+        };
+        students.push(student);
+        localStorage.setItem("students",JSON.stringify(students));
+        displayStudents();
+        name.value=""
+        name.dept=""
+    })
+
+function displayStudents(){
+    container.innerHTML="";
+   
+    students.forEach(student => {
+         let li=document.createElement("li");
+        li.innerText=student.name+ " " + student.dept;
+        container.appendChild(li);
+        
+    });
+    
+}
+
+
+
+</script>
+
    
 </body>
 </html>

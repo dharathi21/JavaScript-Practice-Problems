@@ -49,10 +49,11 @@ function displayStudents(){
    
     students.forEach(student => {
          let li=document.createElement("li");
-        li.innerText=student.name+ " " + student.dept;
+        li.innerText=student.name+ "--- " + student.dept;
         container.appendChild(li);
         
     });
+
     
 }
 
